@@ -3,20 +3,20 @@ import { HttpClient, HttpErrorResponse } from "@angular/common/http";
 import {Observable, throwError} from "rxjs";
 import {catchError, tap} from 'rxjs/operators'
 
-import { IProduct } from "./product";
+import { Icustomer } from "./customer";
 
 @Injectable({
     providedIn: 'root'
 })
 
-export class ProductService{
+export class customerService{
 
-    private productUrl = 'api/products/products.json';
+    private customerUrl = 'api/customers/customers.json';
 
     constructor (private http : HttpClient) {}
 
-    getProducts(): Observable<IProduct[]>{
-        return this.http.get<IProduct[]>(this.productUrl).pipe(
+    getcustomers(): Observable<Icustomer[]>{
+        return this.http.get<Icustomer[]>(this.customerUrl).pipe(
             tap(data => console.log('All: '+ JSON.stringify(data))),
             catchError(this.handleError)
         );

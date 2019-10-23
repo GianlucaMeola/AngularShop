@@ -1,7 +1,7 @@
-export interface IProduct {
-    productId: number;
-    productName: string;
-    productCode: string;
+export interface Icustomer {
+    customerId: number;
+    customerName: string;
+    customerCode: string;
     releaseDate: string;
     description: string;
     price: number;
