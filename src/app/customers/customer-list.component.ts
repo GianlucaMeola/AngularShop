@@ -9,11 +9,13 @@ import { customerService } from "./customer.service";
 })
 
 export class customerListComponent implements OnInit {
-    pageTitle: string ='customer List';
+  pageTitle: string ='customer List';
+  errorMessage : string;
+  _listFilter : string;
+  p: number = 1;
 
-    errorMessage : string;
 
-    _listFilter : string;
+
     get listFilter(): string{
       return this._listFilter;
     }
@@ -30,7 +32,7 @@ export class customerListComponent implements OnInit {
     }
 
     key: string = 'name'; //set default
-  reverse: boolean = false;
+    reverse: boolean = false;
   sort(key){
     this.key = key;
     this.reverse = !this.reverse;

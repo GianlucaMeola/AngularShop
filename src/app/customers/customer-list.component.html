@@ -20,9 +20,6 @@
             <table class='table' *ngIf = 'customers && customers.length' >
                 <thead>
                     <tr>
-                        <th style="cursor: default;">                       
-                            #
-                        </th>
                         <th (click)="sort('customerId')">
                             <span class="glyphicon sort-icon" *ngIf="key =='customerId'" [ngClass]="{'glyphicon-chevron-up':reverse,'glyphicon-chevron-down':!reverse}"></span>
                             Customer Id
@@ -42,14 +39,14 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <tr *ngFor='let customer of filteredcustomers | orderBy: key : reverse; let i = index'>
-                        <td>{{i}}</td>
+                    <tr *ngFor='let customer of filteredcustomers | orderBy: key : reverse | paginate: { itemsPerPage: 15, currentPage: p };'>
                         <td>{{customer.customerId}}</td>
                         <td>{{customer.customerName}}</td>
                         <td>{{customer.customerEmail}}</td>
                         <td>{{customer.phoneNumber}}</td>  
                     </tr>
                 </tbody>
+                <pagination-controls (pageChange)="p = $event"></pagination-controls>
             </table>
         </div>
     </div>

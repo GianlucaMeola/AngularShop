@@ -7,6 +7,7 @@ import { AppComponent } from './app.component';
 import { customerListComponent } from './customers/customer-list.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {OrderModule} from 'ngx-order-pipe';
+import {NgxPaginationModule} from 'ngx-pagination';
 
 @NgModule({
   declarations: [
@@ -19,6 +20,7 @@ import {OrderModule} from 'ngx-order-pipe';
     HttpClientModule,
     BrowserAnimationsModule,
     OrderModule,
+    NgxPaginationModule,
   ],
   bootstrap: [AppComponent]
 })
