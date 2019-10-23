@@ -5,22 +5,20 @@ import {HttpClientModule} from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { customerListComponent } from './customers/customer-list.component';
-import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
-
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-
+import {OrderModule} from 'ngx-order-pipe';
 
 @NgModule({
   declarations: [
     AppComponent,
     customerListComponent,
-    ConvertToSpacesPipe,
   ],
   imports: [
     BrowserModule,
     FormsModule,
     HttpClientModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    OrderModule,
   ],
   bootstrap: [AppComponent]
 })

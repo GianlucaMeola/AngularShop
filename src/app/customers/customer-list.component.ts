@@ -10,9 +10,7 @@ import { customerService } from "./customer.service";
 
 export class customerListComponent implements OnInit {
     pageTitle: string ='customer List';
-    imageWidth: number = 50;
-    imageMargin: number = 2;
-    showImage : boolean = false;
+
     errorMessage : string;
 
     _listFilter : string;
@@ -31,14 +29,18 @@ export class customerListComponent implements OnInit {
 
     }
 
+    key: string = 'name'; //set default
+  reverse: boolean = false;
+  sort(key){
+    this.key = key;
+    this.reverse = !this.reverse;
+  }
+
+
     performFilter(filterBy : string): Icustomer[]{
       filterBy = filterBy.toLocaleLowerCase();
       return this.customers.filter((customer: Icustomer) => 
             customer.customerName.toLocaleLowerCase().indexOf(filterBy) !== -1 || customer.customerEmail.toLocaleLowerCase().indexOf(filterBy) !== -1);
-    }
-
-    toggleImage() : void {
-      this.showImage = !this.showImage;
     }
 
     ngOnInit() : void {
