@@ -28,11 +28,10 @@
                 </thead>
                 <tbody>
                     <tr *ngFor='let customer of filteredcustomers'>
+                        <td>{{customer.customerId}}</td>
                         <td>{{customer.customerName}}</td>
-                        <td>{{customer.customerName}}</td>
-                        <td>{{customer.customerCode}}</td>
-                        <td>{{customer.releaseDate}}</td>  
-                        <td>{{customer.price}}</td>
+                        <td>{{customer.customerEmail}}</td>
+                        <td>{{customer.releasePhoneNumber}}</td>  
                     </tr>
                     
                 </tbody>
