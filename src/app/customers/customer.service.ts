@@ -16,8 +16,9 @@ export class customerService{
     constructor (private http : HttpClient) {}
 
     getcustomers(): Observable<Icustomer[]>{
+        //in a real world app here we should add the API endPoint to call to retrive the data
         return this.http.get<Icustomer[]>(this.customerUrl).pipe(
-            tap(data => console.log('All: '+ JSON.stringify(data))),
+            //tap(data => console.log('All: '+ JSON.stringify(data))),
             catchError(this.handleError)
         );
     }

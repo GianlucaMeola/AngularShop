@@ -6,19 +6,21 @@ import {HttpClientModule} from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { customerListComponent } from './customers/customer-list.component';
 import { ConvertToSpacesPipe } from './shared/convert-to-spaces.pipe';
-import { StarComponent } from './shared/star.comtonent';
+
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+
 
 @NgModule({
   declarations: [
     AppComponent,
     customerListComponent,
     ConvertToSpacesPipe,
-    StarComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    BrowserAnimationsModule
   ],
   bootstrap: [AppComponent]
 })
