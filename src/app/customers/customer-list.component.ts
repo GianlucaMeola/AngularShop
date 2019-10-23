@@ -31,14 +31,10 @@ export class customerListComponent implements OnInit {
 
     }
 
-    onRatingClicked(message:string):void{
-      this.pageTitle = 'customer List: '+message;
-    }
-
     performFilter(filterBy : string): Icustomer[]{
       filterBy = filterBy.toLocaleLowerCase();
       return this.customers.filter((customer: Icustomer) => 
-            customer.customerName.toLocaleLowerCase().indexOf(filterBy) !== -1);
+            customer.customerName.toLocaleLowerCase().indexOf(filterBy) !== -1 || customer.customerEmail.toLocaleLowerCase().indexOf(filterBy) !== -1);
     }
 
     toggleImage() : void {
